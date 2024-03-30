@@ -1,0 +1,41 @@
+/* Pet Details Container Styles */
+.text_box {
+  margin-top: 20px; /* Add space at the top */
+  border: 1px solid #ddd; /* Add border */
+  padding: 10px; /* Add padding */
+}
+
+/* Pet Label Styles */
+.pet_label {
+  font-weight: bold; /* Bold font weight */
+}
+
+/* Pet Name Styles */
+.pet_name {
+  margin-left: 10px; /* Add space between label and name */
+}
+
+/* Pet Image Styles */
+.pet_image {
+  max-width: 100%; /* Ensure image fits container */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 10px; /* Add space at the top */
+}
+
+/* Message Styles */
+.message {
+  color: #ff0000; /* Red color for error message */
+}
+
+/* Back Link Styles */
+p a {
+  display: block; /* Ensure link takes full width */
+  margin-top: 20px; /* Add space at the top */
+  text-decoration: none; /* Remove default link underline */
+  color: #007bff; /* Link color */
+}
+
+/* Back Link Hover Styles */
+p a:hover {
+  text-decoration: underline; /* Underline link on hover */
+}

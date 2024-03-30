@@ -5,8 +5,8 @@ import { PetDetailsComponent } from './pet-details/pet-details.component'; // Im
 import { PetListComponent } from './pets-list/pets-list.component'; // Import PetListComponent
 
 const routes: Routes = [
-  { path: '', component: PetListComponent }, // Change FlowerIndexComponent to PetListComponent
-  { path: 'pets/:id', component: PetDetailsComponent }, // Change FlowerDetailsComponent to PetDetailsComponent
+  { path: '', component: PetListComponent },
+  { path: 'pets/:id', component: PetDetailsComponent },
   { path: '**', redirectTo: '' }
 ];
 

@@ -13,8 +13,8 @@ import { PetDetailsComponent } from './pet-details/pet-details.component'; // Re
   declarations: [
     AppComponent,
     FooterComponent,
-    PetListComponent, // Renamed FlowerIndexComponent to PetListComponent
-    PetDetailsComponent // Renamed FlowerDetailsComponent to PetDetailsComponent
+    PetListComponent,
+    PetDetailsComponent
   ],
   imports: [
     BrowserModule,

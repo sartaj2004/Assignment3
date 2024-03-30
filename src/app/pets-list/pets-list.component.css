@@ -1,0 +1,44 @@
+/* Pet Catalog Styles */
+h2 {
+  text-align: center; /* Center align heading */
+}
+
+/* Table Styles */
+table {
+  width: 100%; /* Full width table */
+  border-collapse: collapse; /* Collapse table borders */
+}
+
+/* Table Row Styles */
+tr {
+  border-bottom: 1px solid #ddd; /* Add bottom border to table rows */
+}
+
+/* Table Cell Styles */
+td {
+  padding: 10px; /* Padding inside table cells */
+}
+
+/* Thumbnail Image Styles */
+.thumb {
+  max-width: 100px; /* Maximum width for thumbnail images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px; /* Rounded corners */
+  display: block; /* Ensure image is block-level */
+  margin: 0 auto; /* Center align images */
+}
+
+/* Pet Label Styles */
+.pet_label {
+  font-weight: bold; /* Bold font weight for pet name */
+}
+
+/* Pet Kind Styles */
+.pet_kind {
+  color: #6c757d; /* Medium gray color for pet kind */
+}
+
+/* Pet Age Styles */
+.pet_age {
+  font-style: italic; /* Italic style for pet age */
+}

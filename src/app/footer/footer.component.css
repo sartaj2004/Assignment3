@@ -1,8 +1,11 @@
+/* Footer Styles */
 .app-footer {
-  padding: 1rem 0;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e7e7e7;
-  span {
-    color: #6c757d;
-  }
+  background-color: #333; /* Dark background color */
+  color: #fff; /* Text color */
+  padding: 20px 0; /* Padding at top and bottom */
+}
+
+/* Center align text */
+.app-footer .container {
+  text-align: center;
 }

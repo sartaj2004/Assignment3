@@ -28,9 +28,9 @@ export class PetDetailsComponent implements OnInit {
     ).subscribe(
       (pet) => {
         if (pet) {
-          this.pet = pet; // Ensure pet is not null here before assignment
+          this.pet = pet;
         } else {
-          // Handle the case where pet is not found or id is invalid
+
           console.error('Pet not found or invalid ID');
         }
       },
