@@ -1,9 +1,8 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Pet } from '../pets';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { PetsDataService } from '../pet.service'; // Assuming PetService is the correct service name
-import { switchMap } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { PetsDataService } from '../pets-data.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pet-details',
@@ -14,20 +13,17 @@ export class PetDetailsComponent implements OnInit {
 
   pet?: Pet; // It can be undefined initially.
 
-  constructor(@Inject(PetsDataService) private petsDataService: PetsDataService, private activatedRoute: ActivatedRoute) {
-
-  }
+  constructor(private petsDataService: PetsDataService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.pipe(
-      switchMap((params: ParamMap) => {
+      map((params: ParamMap) => {
         const idParam = params.get('id'); // idParam is string | null
         if (idParam) {
           const id = Number(idParam);
-          // Use switchMap to handle the Observable<Pet>
-          return !isNaN(id) ? this.petsDataService.getPet(id) : of(undefined);
+          return !isNaN(id) ? this.petsDataService.getPet(id) : undefined;
         }
-        return of(undefined); // Explicitly handle the null case, emitting an undefined observable
+        return undefined; // Explicitly handle the null case
       })
     ).subscribe(
       (pet) => {

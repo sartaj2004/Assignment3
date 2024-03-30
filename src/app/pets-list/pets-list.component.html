@@ -2,15 +2,15 @@
 <h2>Pet Catalog</h2>
 
 <table>
-  <tr *ngFor="let pet of pets">
+  <tr *ngFor="let pet of pets; let i = index"> <!-- Ensure ngFor is correctly formed -->
     <td>
-      <a [routerLink]="['/pets', pet.id]">
-        <!-- Ensure the source path is correct. It concatenates the assets folder path with the image filename -->
-        <img class="thumb" [src]="'assets/Images/pets/' + pet.image" [alt]="pet.name">
+      <a [routerLink]="['/pets', pet.id]"> <!-- Ensure routerLink is correctly formed -->
+        <!-- Assuming pet.image is a path to the image. Use ngSrc or equivalent if you have that directive available -->
+        <img class="thumb" [src]="pet.image" [alt]="pet.name" *ngIf="pet.image"> <!-- Conditional display of image -->
       </a>
     </td>
     <td>
-      <span class="pet_name">{{ pet.name }}</span>&nbsp;&nbsp;
+      <span class="pet_label">{{ pet.name }}</span>&nbsp;&nbsp;
       <span class="pet_kind">{{ pet.petKind }}</span><br>
       <span class="pet_age">Age: {{ pet.age }}</span>
     </td>
