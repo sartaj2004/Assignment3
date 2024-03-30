@@ -1,10 +1,27 @@
-import { Component } from '@angular/core';
+// pets-list.component.ts
+import { Component, OnInit } from '@angular/core';
+import { Pet } from '../pets';
+import { PetsDataService } from '../pet.service';
 
 @Component({
-  selector: 'app-pets-list',
+  selector: 'app-pet-list',
   templateUrl: './pets-list.component.html',
-  styleUrl: './pets-list.component.css'
+  styleUrls: ['./pets-list.component.css']
 })
-export class PetsListComponent {
 
+export class PetListComponent implements OnInit {
+  pets: Pet[] = [];
+  imageBaseUrl: string = 'http://localhost:8080/images/pets/'; // This should be the base URL where your images are served from
+
+  constructor(private petsDataService: PetsDataService) {}
+
+  ngOnInit() {
+    this.petsDataService.getPets().subscribe((data: Pet[]) => {
+      this.pets = data;
+    });
+  }
+
+  getImageUrl(imageName: string): string {
+    return this.imageBaseUrl + imageName;
+  }
 }

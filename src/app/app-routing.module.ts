@@ -1,7 +1,14 @@
+// app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PetDetailsComponent } from './pet-details/pet-details.component'; // Import PetDetailsComponent
+import { PetListComponent } from './pets-list/pets-list.component'; // Import PetListComponent
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: PetListComponent }, // Change FlowerIndexComponent to PetListComponent
+  { path: 'pets/:id', component: PetDetailsComponent }, // Change FlowerDetailsComponent to PetDetailsComponent
+  { path: '**', redirectTo: '' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

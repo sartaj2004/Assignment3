@@ -1,1 +1,28 @@
-<p>pet-details works!</p>
+<!-- Start of pet-details.component.html -->
+<ng-container *ngIf="pet">
+  <p>
+    <span class="pet_label">Pet:</span>
+    <span class="pet_name">{{ pet.name }}</span>
+  </p>
+  <p>
+    <!-- Ensure the image source points to the correct assets folder -->
+    <img [src]="'assets/Images/pets/' + pet.image" [alt]="pet.name" class="pet_image">
+  </p>
+  <div class="text_box">
+    <p>Kind: {{ pet.petKind }}</p>
+    <p>Age: {{ pet.age }}</p>
+    <!-- Insert other pet details here -->
+  </div>
+</ng-container>
+
+<ng-template #not_found>
+  <p class="message">
+    Pet data not found.
+  </p>
+</ng-template>
+
+<!-- Link back to the pet catalog -->
+<p>
+  <a routerLink="/">Back to Pet Catalog</a>
+</p>
+<!-- End of pet-details.component.html -->

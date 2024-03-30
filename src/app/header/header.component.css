@@ -1,0 +1,17 @@
+.app-header {
+  .navbar {
+    background-color: #007bff;
+    .navbar-brand {
+      color: #fff;
+      &:hover {
+        color: #ccc;
+      }
+    }
+    .nav-link {
+      color: #fff;
+      &:hover {
+        color: #ccc;
+      }
+    }
+  }
+}

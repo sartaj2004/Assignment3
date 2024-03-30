@@ -1,1 +1,19 @@
-<p>pets-list works!</p>
+<!-- Start of pets-list.component.html -->
+<h2>Pet Catalog</h2>
+
+<table>
+  <tr *ngFor="let pet of pets">
+    <td>
+      <a [routerLink]="['/pets', pet.id]">
+        <!-- Ensure the source path is correct. It concatenates the assets folder path with the image filename -->
+        <img class="thumb" [src]="'assets/Images/pets/' + pet.image" [alt]="pet.name">
+      </a>
+    </td>
+    <td>
+      <span class="pet_name">{{ pet.name }}</span>&nbsp;&nbsp;
+      <span class="pet_kind">{{ pet.petKind }}</span><br>
+      <span class="pet_age">Age: {{ pet.age }}</span>
+    </td>
+  </tr>
+</table>
+<!-- End of pets-list.component.html -->
